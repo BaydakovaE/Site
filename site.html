@@ -1,0 +1,81 @@
+<!Doctype html>
+
+<head>
+	<meta charset="windows-1251">
+	<title>Title</title>
+	<link href="https://cdnjs.cloudlare.com/ajax/libs/normalize/3.0.3/normalize.min.css"
+	      rel="stylesheet"
+	      type="text/css">
+	<style>
+	  #head{
+	    height: 60px; 
+	    background: #553e52;
+	    text-align:center;
+	    color:white;
+	    font-family: cursive;
+	    line-height: 60px;
+	    font-size: 22px;
+	  }
+	  
+	  #left-panel{
+	    float:left;
+            height: 500px;
+	    width: 150px;
+	    background: #5384a2
+	  }
+
+	  #content{
+	    margin-left: 150px;
+	    background: #cfd9d0;
+	    height: 1200px;
+	  }
+	@media(max-width: 798px){
+	  #left-pannel{
+	    display:none
+	  }
+	  #content{
+	    margin-left: 0 important;
+   	  }
+	}
+	  #top-content{
+	    margin-left: 150px;
+	    background: #b5d0d4;
+	    height: 100px;
+	  }
+	  #left {
+	    padding-left: 0px;
+	    display: inline;
+	    margin-left: 0px;
+	    
+	    }  
+	  li {
+	    line-height: 50px;
+	    font-size: 15px;
+	  }
+	</style>
+</head>
+<body style="background:#cfd9d0">
+	<header id="head">Готовим дома</header>
+	<div style="height:40px; background: #d2b29e">Top</div>
+	<div id="left-panel">
+	   <ul id="left">
+	   <li><a href="#">Главная страница</a></li>
+	   <li><a href="#">О сайте</a></li>
+	   <li><a href="#">Фотогалерея</a></li>
+	   <li><a href="#">Статьи</a></li>
+	   <li><a href="#">Обратная связь</a></li>
+	   <li><a href="#">Кулинарный форум</a></li>
+	</ul>
+	</div>
+	<div id ="top-content">
+	   <p align="center" style="margin-top: 0px; margin-bottom: 0px; padding-top: 10px; padding-bottom: 10px; padding-left: 10px; padding-right: 10px;">
+	       Добро пожпловать на сайт "Готовим дома"!
+	   </p>
+	   <p style="margin-top: 0px; margin-bottom: 0px;">
+	       У нас вы найдете вкусные, доступные и оригинальные рецепты домашней кухни.
+	   </p>    
+	</div>
+	<div id="content">
+	</div>
+</body>
+</html>
