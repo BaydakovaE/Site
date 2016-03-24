@@ -2,7 +2,7 @@
 
 <head>
 	<meta charset="windows-1251">
-	<title>Title</title>
+	<title>Кулинарный сайт</title>
 	<link href="https://cdnjs.cloudlare.com/ajax/libs/normalize/3.0.3/normalize.min.css"
 	      rel="stylesheet"
 	      type="text/css">
@@ -14,12 +14,12 @@
 	    color:white;
 	    font-family: cursive;
 	    line-height: 60px;
-	    font-size: 22px;
+	    font-size: 28px;
 	  }
 	  
 	  #left-panel{
 	    float:left;
-            height: 500px;
+            height: 400px;
 	    width: 150px;
 	    background: #5384a2
 	  }
@@ -27,7 +27,7 @@
 	  #content{
 	    margin-left: 150px;
 	    background: #cfd9d0;
-	    height: 1200px;
+	    height: 1300px;
 	  }
 	@media(max-width: 798px){
 	  #left-pannel{
@@ -52,12 +52,38 @@
 	    line-height: 50px;
 	    font-size: 15px;
 	  }
+	  .image{
+	    margin-left: 250px;
+	    width: 400px;
+	    height: 300px;
+	  }
+	  .header_top{
+	    margin-left: 200px;
+	    margin-top: 30px;
+	    font-family: cursive;
+	    font-size: 22px;
+	  }
+	  .text{
+	    margin-left: 380px;
+	    font-family: cursive;
+	    font-size: 18px;
+	  }
+	  #top{
+	    height: 40px; 
+	    background: #d2b29e;
+	    text-align: right;
+	    padding-right: 10px;
+	    line-height: 40px;
+	    font-family: cursive;
+	    font-size: 14px;
+	  }
+	  
 	</style>
 </head>
-<body style="background:#cfd9d0">
+<body style="background:#cfd9d0; margin-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px";>
 	<header id="head">Готовим дома</header>
-	<div style="height:40px; background: #d2b29e">Top</div>
-	<div id="left-panel">
+	<div id="top">Контакты: support@gmail.com</div>
+	<div id="left-panel"; style="padding-left: 10px";>
 	   <ul id="left">
 	   <li><a href="#">Главная страница</a></li>
 	   <li><a href="#">О сайте</a></li>
@@ -67,15 +93,27 @@
 	   <li><a href="#">Кулинарный форум</a></li>
 	</ul>
 	</div>
-	<div id ="top-content">
+	<div id ="top-content"; style="padding-left:20px";>
 	   <p align="center" style="margin-top: 0px; margin-bottom: 0px; padding-top: 10px; padding-bottom: 10px; padding-left: 10px; padding-right: 10px;">
 	       Добро пожпловать на сайт "Готовим дома"!
 	   </p>
 	   <p style="margin-top: 0px; margin-bottom: 0px;">
-	       У нас вы найдете вкусные, доступные и оригинальные рецепты домашней кухни.
+	       У нас вы найдете вкусные, доступные и оригинальные рецепты домашней кухни. Своими любимыми и интересными рецептами Вы можете поделиться на нашем кулинарном форуме. На форуме Вы найдете множество интересных блюд, оригинальных идей.
 	   </p>    
 	</div>
 	<div id="content">
+	   <div class="header_top">Блинчики</div>
+	   <img class="image"; src="http://vkusnodoma.net/wp-content/uploads/2014/10/blini_yagodi.jpg">
+	   <div class="text"><a href="#">Читать далее</a></div>
+	   <div class="header_top">Творожная запеканка</div>
+	   <img class="image"; src="http://hochu.ua/pictures_ckfinder/images/Depositphotos_70465423_m-2015.jpg">
+	   <div class="text"><a href="#">Читать далее</a></div>
+	   <div class="header_top">Борщ</div>
+	   <img class="image"; src="https://i.ytimg.com/vi/cxX7-PsLUVk/maxresdefault.jpg">
+	   <div class="text"><a href="#">Читать далее</a></div>
+	   <div class="header_top">Салат "Цезарь" с курицей</div>
+	   <img class="image"; src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQR9XN7kkoId4OCqVaFRWQzDBV_dm0zM6ZyfzDO43kwG_lhIc8j9w">
+	   <div class="text"><a href="#">Читать далее</a></div>
 	</div>
 </body>
 </html>
