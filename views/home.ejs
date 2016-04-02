@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<head>
+<title>Кулинарный сайт</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.0.0/normalize.min.css"
+      rel="stylesheet"
+      type="text/css"></link>
+<style>
+	  #head{
+	    height: 60px;
+	    background: #553e52;
+	    text-align:center;
+	    color:white;
+	    font-family: cursive;
+	    line-height: 60px;
+	    font-size: 28px;
+	  }
+
+	  #left-panel{
+	    float:left;
+            height: 400px;
+	    width: 150px;
+	    background: #5384a2
+	  }
+
+	  #content{
+	    margin-left: 150px;
+	    background: #cfd9d0;
+	    height: 1800px;
+	  }
+
+	@media(max-width: 798px){
+	  #left-panel{
+	    display:none
+	  }
+	  #top-content{
+	    margin-left: 0px !important;
+	    }
+	  #content{
+	    margin-left: 0px !important;
+   	  }
+	}
+
+	  #top-content{
+	    margin-left: 150px;
+	    background: #b5d0d4;
+	    height: 100px;
+	  }
+	  #left {
+	    padding-left: 0px;
+	    display: inline;
+	    margin-left: 0px;
+
+	    }
+	  li {
+	    line-height: 50px;
+	    font-size: 17px;
+	    list-style-type: none;
+	  }
+	  .image{
+	    margin-left: 250px;
+	    width: 400px;
+	    height: 300px;
+	  }
+	  .header_top{
+	    margin-left: 200px;
+	    padding-top: 30px;
+	    font-family: cursive;
+	    font-size: 22px;
+	  }
+	  .text{
+	    margin-left: 380px;
+	    font-family: cursive;
+	    font-size: 18px;
+	  }
+	  #top{
+	    height: 40px;
+	    background: #d2b29e;
+	    text-align: right;
+	    padding-right: 10px;
+	    line-height: 40px;
+	    font-family: cursive;
+	    font-size: 14px;
+	  }
+
+	    #body{
+	    max-width: 1500px;
+	    margin: 0 auto 0 auto;
+
+	    }
+	    #add{
+        position:fixed;
+        right: 15px;
+        bottom:20px;
+        }
+
+	</style>
+</head>
+<body id = "body" style="background:#cfd9d0;">
+    <header id="head">Готовим дома</header>
+    <div id="top">Контакты: support@gmail.com</div>
+    <div id="left-panel" style="padding-left: 10px">
+        <ul id="left">
+            <li><a href="#">Главная страница</a></li>
+            <li><a href="#">О сайте</a></li>
+            <li><a href="#">Фотогалерея</a></li>
+            <li><a href="#">Статьи</a></li>
+            <li><a href="#">Обратная связь</a></li>
+            <li><a href="#">Кулинарный форум</a></li>
+        </ul>
+    </div>
+    <div id ="top-content" style="padding-left:20px">
+        <p align="center" style="margin-top: 0px; margin-bottom: 0px; padding-top: 10px; padding-bottom: 10px; padding-left: 10px; padding-right: 10px;">
+        Добро пожаловать на сайт "Готовим дома"!
+        </p>
+        <p style="margin-top: 0px; margin-bottom: 0px;">
+        У нас вы найдете вкусные, доступные и оригинальные рецепты домашней кухни. Своими любимыми и интересными рецептами Вы можете поделиться на нашем кулинарном форуме. На форуме Вы найдете множество интересных блюд, оригинальных идей.
+        </p>
+    </div>
+    <div id="content">
+        <% data.forEach(function(datum) {%>
+                  <div class="content_add" id=<%= "content_add"+datum.id %>>
+                  <span><%= datum.text %></span>
+                  <button id="remBut" onclick="removeData(<%= datum.id%>)">x</button>
+                  </div>
+                  <% }); %>
+
+        <div class="header_top">Блинчики</div>
+        <img class="image" src="http://vkusnodoma.net/wp-content/uploads/2014/10/blini_yagodi.jpg"></img>
+        <div class="text"><a href="#">Читать далее</a></div>
+        <div class="header_top">Творожная запеканка</div>
+        <img class="image" src="http://hochu.ua/pictures_ckfinder/images/Depositphotos_70465423_m-2015.jpg"></img>
+        <div class="text"><a href="#">Читать далее</a></div>
+        <div class="header_top">Борщ</div>
+        <img class="image" src="https://i.ytimg.com/vi/cxX7-PsLUVk/maxresdefault.jpg"></img>
+        <div class="text"><a href="#">Читать далее</a></div>
+        <div class="header_top">Салат "Цезарь" с курицей</div>
+        <img class="image" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQR9XN7kkoId4OCqVaFRWQzDBV_dm0zM6ZyfzDO43kwG_lhIc8j9w"></img>
+        <div class="text"><a href="#">Читать далее</a></div>
+    </div>
+
+    <div id="add">
+    			<input id="input" type="text"/>
+    			<button id="create" onclick="create()">add</button>
+    </div>
+
+
+    <script type="text/javascript">
+    		function getLastAddedKey() {
+    			return doGetRequest('/getLastAddedKey')};
+
+    		function doGetRequest(text) {
+    		var request = new XMLHttpRequest();
+    		request.open('GET', text,false);
+    		request.send();
+    		if (request.status != 200) {
+    			console.log(request.status + ': ' + request.statusText);
+    			return;
+    		} else {
+    			return JSON.parse(request.response).id;
+    		}
+    	};
+
+    		function create(){
+    			var text = document.getElementById('input').value;
+    			var request = new XMLHttpRequest();
+    			request.open('POST', '/new?text='+text);
+    			request.send();
+    			var newDiv = document.createElement('div');
+    			var id = getLastAddedKey('text='+text);
+    			newDiv.setAttribute('class','content');
+    			newDiv.setAttribute('id','content'+id);
+    			newDiv.innerHTML = '<span>'+text+'</span>'+
+    				'<button id="remBut" onclick="removeData('+id+')">x</button>';
+    			document.getElementById('content').appendChild(newDiv);
+    			document.getElementById('input').value='';
+    		}
+
+    		function removeData(id){
+    			var request = new XMLHttpRequest();
+    			request.open('POST', '/delete?id='+id);
+    			request.send();
+    			document.getElementById('content'+id).remove();
+    		}
+    </script>
+</body>
+</html>
